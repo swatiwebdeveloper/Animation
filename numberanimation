@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    #count {
+        font-size: 64px;
+        color: #06e090;
+    }
+</style>
+</head>
+<body>
+<pre id="count">0</pre>
+
+<script type="module">
+    import { animate } from "https://cdn.jsdelivr.net/npm/motion@12.16.0/+esm"
+
+    const count = document.getElementById("count")
+
+    animate(0, 14500, {
+        duration: 2,
+        ease: "circOut",
+        onUpdate: (latest) => (count.innerHTML = Math.round(latest)),
+    })
+</script>
+</body>
+</html>
